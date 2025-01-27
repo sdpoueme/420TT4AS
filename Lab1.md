@@ -18,11 +18,9 @@ Créer et déployer une application web simple en utilisant Docker, en apprenant
 
 ## Instructions étape par étape (Windows)
 
-# Guide d'installation Nginx avec Docker sous Windows
-
 Ce guide détaille l'installation et la configuration d'un serveur web Nginx dans un conteneur Docker sous Windows.
 
-## Table des matières
+### Table des matières
 - [1. Sélection et importation de l'image](#1-sélection-et-importation-de-limage)
 - [2. Préparation de l'environnement](#2-préparation-de-lenvironnement)
 - [3. Création du Dockerfile](#3-création-du-dockerfile)
@@ -30,7 +28,7 @@ Ce guide détaille l'installation et la configuration d'un serveur web Nginx dan
 - [5. Configuration réseau](#5-configuration-réseau)
 - [Notes importantes](#notes-importantes)
 
-## 1. Sélection et importation de l'image
+### 1. Sélection et importation de l'image
 
 1. Rechercher l'image nginx :
 ```bash
@@ -47,7 +45,7 @@ docker pull nginx:latest
 docker images
 ```
 
-## 2. Préparation de l'environnement
+### 2. Préparation de l'environnement
 
 1. Créer la structure de répertoires (PowerShell ou CMD) :
 ```powershell
@@ -71,7 +69,7 @@ mkdir config
 </html>
 ```
 
-## 3. Création du Dockerfile
+### 3. Création du Dockerfile
 
 1. Créer un fichier `Dockerfile` à la racine du projet :
 ```powershell
@@ -89,7 +87,7 @@ COPY html/ /usr/share/nginx/html/
 EXPOSE 80
 ```
 
-## 4. Configuration des volumes
+### 4. Configuration des volumes
 
 1. Créer un volume Docker :
 ```bash
@@ -101,7 +99,7 @@ docker volume create web_data
 VOLUME /usr/share/nginx/html
 ```
 
-## 5. Configuration réseau
+### 5. Construction de l'image personalisée
 
 1. Construire l'image :
 ```bash
