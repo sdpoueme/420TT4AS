@@ -110,12 +110,12 @@ docker build -t mon-site-web .
 
 Pour CMD :
 ```bash
-docker run -d --name mon-site -p 8080:80 -v web_data:/usr/share/nginx/html -v %cd%/html:/usr/share/nginx/html mon-site-web
+docker run -d --name mon-site -p 8080:80 -v web_data:/usr/share/nginx/html mon-site-web
 ```
 
 Pour PowerShell :
 ```powershell
-docker run -d --name mon-site -p 8080:80 -v web_data:/usr/share/nginx/html -v ${PWD}/html:/usr/share/nginx/html mon-site-web
+docker run -d --name mon-site -p 8080:80 -v web_data:/usr/share/nginx/html mon-site-web
 ```
 
 ## Notes importantes
@@ -213,7 +213,6 @@ docker run -d \
     --name mon-site \
     -p 8080:80 \
     -v web_data:/usr/share/nginx/html \
-    -v $(pwd)/html:/usr/share/nginx/html \
     mon-site-web
 ```
 
