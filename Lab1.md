@@ -16,7 +16,7 @@ Créer et déployer une application web simple en utilisant Docker, en apprenant
 - Template HTML de base (index.html)
 - Fichier de configuration nginx (nginx.conf)
 
-## Instructions étape par étape
+## Instructions étape par étape (MacOS / Linux)
 
 ### 1. Sélection et importation de l'image (15 min)
 1. Rechercher l'image nginx sur Docker Hub
