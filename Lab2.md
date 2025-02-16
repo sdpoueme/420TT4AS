@@ -1,15 +1,7 @@
 # Laboratoire Pratique - Application de Gestion de Produits
 
 ## Objectif
-Créer une application React complète intégrant le filtrage, l'ordonnancement et les formulaires pour gérer un catalogue de produits.
-
-## Durée
-4 heures
-
-## Prérequis
-- Node.js installé
-- Connaissance de base de React
-- Éditeur de code
+Créer une application React intégrant le filtrage, l'ordonnancement et les formulaires pour gérer un catalogue de produits.
 
 ## Mise en place (30 minutes)
 
