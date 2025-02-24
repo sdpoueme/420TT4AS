@@ -6,6 +6,7 @@ Créer une application React intégrant le filtrage, l'ordonnancement et les for
 ## Mise en place (30 minutes)
 
 ### 1. Création du projet
+Le code ci-dessous crée une application React. Ensuite nous installons des librairies qui sont nécessaires: 
 ```bash
 npx create-react-app product-management
 cd product-management
@@ -13,7 +14,7 @@ npm install @heroicons/react classnames
 ```
 
 ### 2. Structure des fichiers
-Créer la structure de fichiers ci-dessous
+Créer la structure de fichiers ci-dessous. Les composantes vont dans le répertoire `components` et sont classées par type, notamment les Filters, Sorting, Products, Forms, Hooks et Data. 
 ```
 src/
   components/
