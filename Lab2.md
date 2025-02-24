@@ -251,6 +251,45 @@ const ProductForm = ({ onSubmit, initialValues = {} }) => {
 
 ## Partie 4 - Intégration (30 minutes)
 
+Exemple de code pour l'affichage d'une liste de produits en tableau
+```jsx
+//Liste de produits affichés dans une table HTML
+
+import React from 'react';
+import { products } from './data/products';
+
+const ProductList = ({ products }) => {
+    return (
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                {products.map(product => (
+                    <tr key={product.id}>
+                        <td>{product.id}</td>
+                        <td>{product.name}</td>
+                        <td>{product.category}</td>
+                        <td>{product.price}</td>
+                        <td>{product.stock}</td>
+                        <td>{product.rating}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    );
+}
+    
+export default ProductList;
+```
+
 ### Exercice 4.1 - Application principale
 ```jsx
 // src/App.jsx
