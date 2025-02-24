@@ -13,6 +13,7 @@ npm install @heroicons/react classnames
 ```
 
 ### 2. Structure des fichiers
+Créer la structure de fichiers ci-dessous
 ```
 src/
   components/
