@@ -3,6 +3,9 @@
 ## Objectif
 Créer une application React intégrant le filtrage, l'ordonnancement et les formulaires pour gérer un catalogue de produits.
 
+<img width="669" alt="image" src="https://github.com/user-attachments/assets/7155b3dd-2479-4867-8376-626dcbf6bd08" />
+
+
 ## Mise en place (30 minutes)
 
 ### 1. Création du projet
