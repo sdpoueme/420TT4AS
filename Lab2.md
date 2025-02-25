@@ -313,52 +313,40 @@ export default CategoryFilter;
 ```
 
 ```jsx
-// src/components/Filters/PriceFilter.jsx
-import React, { useState } from 'react';
+// src/components/Filters/CategoryFilter.jsx
+import React from 'react';
 
-const PriceFilter = ({ onChange }) => {
-  const [priceRange, setPriceRange] = useState({
-    min: 0,
-    max: 1000
-  });
-
-  const handleChange = (type) => (event) => {
-    const value = parseInt(event.target.value) || 0;
-    const newRange = { ...priceRange, [type]: value };
-    setPriceRange(newRange);
-    onChange && onChange(newRange);
+const CategoryFilter = ({ selectedCategory, onChange }) => {
+  const handleChange = (e) => {
+    onChange(e.target.value);
   };
 
+  const categories = [
+    'All',
+    'Electronics',
+    'Books',
+    'Clothing',
+    'Home & Garden'
+  ];
+
   return (
-    <div className="price-filter">
-      <h3>Price Range</h3>
-      <div className="price-inputs">
-        <div>
-          <label htmlFor="min-price">Min Price:</label>
-          <input
-            type="number"
-            id="min-price"
-            value={priceRange.min}
-            onChange={handleChange('min')}
-            min="0"
-          />
-        </div>
-        <div>
-          <label htmlFor="max-price">Max Price:</label>
-          <input
-            type="number"
-            id="max-price"
-            value={priceRange.max}
-            onChange={handleChange('max')}
-            min={priceRange.min}
-          />
-        </div>
-      </div>
+    <div className="category-filter">
+      <select 
+        value={selectedCategory || 'All'}
+        onChange={handleChange}
+        className="category-select"
+      >
+        {categories.map(category => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };
 
-export default PriceFilter;
+export default CategoryFilter;
 ```
 
 ## Partie 2 - Système de Tri (1 heure)
