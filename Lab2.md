@@ -657,20 +657,9 @@ import SortControls from './components/Sorting/SortControls';
 
 function App() {
   // Initialize with empty array if no initial products
-  const [productData, setProductData] = useState([]);
-  const { filters, setFilters, filteredData } = useFilters(productData);
 
-  // Add a product
-  const handleAddProduct = (newProduct) => {
-    setProductData(prev => [...prev, {
-      ...newProduct,
-      id: Date.now(), // Ensure unique ID
-      name: String(newProduct.name),
-      description: String(newProduct.description),
-      price: Number(newProduct.price),
-      category: String(newProduct.category)
-    }]);
-  };
+  const { filters, setFilters, filteredData } = useFilters(products);
+
 
   return (
     <div className="app-container" style={{ padding: '20px' }}>
@@ -700,7 +689,7 @@ function App() {
         />
       </div>
 
-      <ProductList products={products} />
+      <ProductList products={filteredData} />
 
     </div>
   );
@@ -708,5 +697,4 @@ function App() {
 
 
 export default App;
-
 ```
