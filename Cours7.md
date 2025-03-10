@@ -468,3 +468,5 @@ Implémentez une structure de dashboard avec sous-routes :
 - Profil (`/dashboard/profile`)
 - Paramètres (`/dashboard/settings`)
 Toutes avec une mise en page commune.
+
+[Code complet - Partie 1 et 2](https://github.com/sdpoueme/420TT4AS/tree/main/product-app)
