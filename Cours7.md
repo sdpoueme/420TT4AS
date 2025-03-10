@@ -1,5 +1,4 @@
-# COURS 7 - 420TTT4AS
-## Routage, Intégration HTTP
+# Routage et Intégration HTTP dans REACT
 
 ---
 
