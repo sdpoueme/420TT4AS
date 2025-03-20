@@ -214,10 +214,10 @@ export const products = [
 
 ### Exercice 1.1 - Hook personnalisé pour les filtres
 ```jsx
-// src/components/hooks/useFilter.js
+// src/hooks/useFilter.js
 import { useState, useMemo } from 'react';
 
-export const useFilters = (data = []) => {
+export const useFilters = (initialData = []) => {
   const [filters, setFilters] = useState({
     search: '',
     category: 'All',
@@ -225,37 +225,41 @@ export const useFilters = (data = []) => {
   });
 
   const filteredData = useMemo(() => {
-    return data.filter(item => {
-      // Convert search term to string and lowercase
-      const searchTerm = String(filters.search || '').toLowerCase();
+    console.log('Initial data:', initialData); // Debug log
+    console.log('Current filters:', filters); // Debug log
+
+    if (!Array.isArray(initialData)) {
+      console.warn('Data is not an array:', initialData);
+      return [];
+    }
+
+    const filtered = initialData.filter(item => {
+      if (!item) return false;
+
+      // Debug logs
+      console.log('Processing item:', item);
       
-      // Safely convert item values to strings before calling toLowerCase
-      const itemName = String(item?.name || '').toLowerCase();
-      const itemDescription = String(item?.description || '').toLowerCase();
-      const itemCategory = String(item?.category || '').toLowerCase();
-
-      // Search matching
-      const matchesSearch = 
-        itemName.includes(searchTerm) || 
-        itemDescription.includes(searchTerm);
-
-      // Category matching
-      const matchesCategory = 
-        filters.category === 'All' || 
-        itemCategory === filters.category.toLowerCase();
-
-      // Price matching with safety checks
-      const itemPrice = Number(item?.price) || 0;
-      const minPrice = Number(filters.price?.min) || 0;
-      const maxPrice = Number(filters.price?.max) || Infinity;
+      const searchTerm = (filters.search || '').toLowerCase();
+      const itemName = (item.name || '').toLowerCase();
       
-      const matchesPrice = 
-        itemPrice >= minPrice && 
-        itemPrice <= maxPrice;
+      const matchesSearch = !filters.search || itemName.includes(searchTerm);
+      const matchesCategory = !filters.category || filters.category === 'All' || item.category === filters.category;
+      const matchesPrice = (!filters.price.min || item.price >= filters.price.min) && 
+                         (!filters.price.max || item.price <= filters.price.max);
+
+      // Debug log for matching conditions
+      console.log('Match results for', item.name, ':', {
+        matchesSearch,
+        matchesCategory,
+        matchesPrice
+      });
 
       return matchesSearch && matchesCategory && matchesPrice;
     });
-  }, [data, filters]);
+
+    console.log('Filtered results:', filtered); // Debug log
+    return filtered;
+  }, [initialData, filters]);
 
   return { filters, setFilters, filteredData };
 };
