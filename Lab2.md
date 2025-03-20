@@ -602,8 +602,7 @@ Esuite on intègre toutes nos fonctions dans le fichier App.js
 ### Exercice 4.1 - Application principale
 ```jsx
 import './App.css';
-import React, { useState } from 'react';
-import { products } from './components/data/products';
+import React, { useState, useEffect } from 'react';
 import { useFilters } from './components/hooks/useFilter';
 import { useSorting } from './components/hooks/useSorting';
 import SearchBar from './components/Filters/SearchBar';
@@ -612,12 +611,24 @@ import PriceFilter from './components/Filters/PriceFilter';
 import ProductList from './components/Products/ProductList';
 import ProductForm from './components/Forms/ProductForm';
 import SortControls from './components/Sorting/SortControls';
+import axios from 'axios';
 
 function App() {
-  // Initialize with empty array if no initial products
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/products");
+        setProducts(response.data); // Fix: access response.data instead of response
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   const { filters, setFilters, filteredData } = useFilters(products);
-
 
   return (
     <div className="app-container" style={{ padding: '20px' }}>
@@ -652,7 +663,6 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
 ```
