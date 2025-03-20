@@ -214,7 +214,7 @@ export const products = [
 
 ### Exercice 1.1 - Hook personnalisé pour les filtres
 ```jsx
-// src/hooks/useFilters.js
+// src/components/hooks/useFilters.js
 import { useState, useMemo } from 'react';
 
 export const useFilters = (data = []) => {
@@ -358,7 +358,7 @@ Ici nous rajoutons les fonctionnalités pour le tri de la table.
 
 ### Exercice 2.1 - Hook de tri
 ```jsx
-// src/hooks/useSorting.js
+// src/components/hooks/useSorting.js
 import { useState, useMemo } from 'react';
 
 export const useSorting = (data) => {
@@ -410,7 +410,7 @@ const SortControls = ({ sortConfig, onSort }) => {
 
 ### Exercice 3.1 - Hook de formulaire
 ```jsx
-// src/hooks/useForm.js
+// src/components/hooks/useForm.js
 import { useState } from 'react';
 
 export const useForm = (initialValues, validate) => {
