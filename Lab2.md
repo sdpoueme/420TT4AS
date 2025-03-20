@@ -42,7 +42,7 @@ src/
 
 ### 3. Données de test
 ```javascript
-/a constant list of products  
+//a constant list of products  
 
 export const products = [
     {
