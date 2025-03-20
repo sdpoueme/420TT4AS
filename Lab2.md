@@ -33,7 +33,7 @@ src/
     Forms/
       ProductForm.jsx
     hooks/
-      useFilters.js
+      useFilter.js
       useSorting.js
       useForm.js
     data/
@@ -214,7 +214,7 @@ export const products = [
 
 ### Exercice 1.1 - Hook personnalisé pour les filtres
 ```jsx
-// src/components/hooks/useFilters.js
+// src/components/hooks/useFilter.js
 import { useState, useMemo } from 'react';
 
 export const useFilters = (data = []) => {
