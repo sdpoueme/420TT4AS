@@ -280,40 +280,7 @@ const SearchBar = ({ value, onChange }) => {
   export default SearchBar;
 ```
  
-```jsx
-import React from 'react';
 
-const CategoryFilter = () => {
-  const categories = [
-    'All',
-    'Electronics',
-    'Clothing',
-    'Books',
-    'Home & Garden',
-    // Add more categories as needed
-  ];
-
-  return (
-    <div className="category-filter">
-      <label htmlFor="category">Category:</label>
-      <select 
-        id="category" 
-        name="category"
-        onChange={(e) => console.log(e.target.value)}
-        defaultValue="All"
-      >
-        {categories.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-};
-
-export default CategoryFilter;
-```
 
 ```jsx
 // src/components/Filters/CategoryFilter.jsx
