@@ -32,12 +32,12 @@ src/
       ProductCard.jsx
     Forms/
       ProductForm.jsx
-  hooks/
-    useFilters.js
-    useSorting.js
-    useForm.js
-  data/
-    products.js
+    hooks/
+      useFilters.js
+      useSorting.js
+      useForm.js
+    data/
+      products.js
 ```
 
 ### 3. Données de test
