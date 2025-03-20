@@ -284,7 +284,7 @@ const SearchBar = ({ value, onChange }) => {
   export default SearchBar;
 ```
 
-```
+```jsx
 // src/components/Filters/PriceFilter.jsx
 import React, { useState } from 'react';
 
