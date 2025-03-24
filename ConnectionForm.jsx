@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 
-function LoginForm() {
+function ConnectionForm() {
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
