@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-function RegisterForm() {
+function UserManagementForm() {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
